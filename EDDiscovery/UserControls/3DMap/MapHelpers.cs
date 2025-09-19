@@ -34,6 +34,9 @@ namespace EDDiscovery.UserControls.Map3D
             {
                 travelpath.CreatePath(parent.DiscoveryForm.History, galmapobjects?.PositionsWithEnable);
                 travelpath.SetSystem(parent.DiscoveryForm.History.LastSystem);
+
+                // Point map at current system
+                GoToCurrentSystem();
             }
 
             CheckRefreshLocalArea();  // also see if local stars need updating
