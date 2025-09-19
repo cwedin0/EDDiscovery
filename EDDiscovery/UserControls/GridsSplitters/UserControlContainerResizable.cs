@@ -32,7 +32,7 @@ namespace EDDiscovery.UserControls
         private const int margin = 3;
         private bool selected = false;
 
-        private Label lcontroltext;
+        //private Label lcontroltext;
 
         public UserControlContainerResizable()
         {
@@ -42,15 +42,16 @@ namespace EDDiscovery.UserControls
         public void Init( UserControlCommonBase uccb, string title)
         {
             UCCB = uccb;
-            lcontroltext = new Label() { Top = margin, Left = margin, Text = title };
+            //lcontroltext = new Label() { Top = margin, Left = margin, Text = title };
             Controls.Add(UCCB);
-            Controls.Add(lcontroltext);
+            //Controls.Add(lcontroltext);
             PerformLayout();
         }
 
         public void SetControlText(string s)
         {
-            lcontroltext.Text = s;
+            //lcontroltext.Text = s;
+            // Do nothing
         }
 
         private void SetSelected(bool s)
@@ -62,7 +63,7 @@ namespace EDDiscovery.UserControls
         protected override void OnLayout(LayoutEventArgs e)
         {
             base.OnLayout(e);
-            lcontroltext.Width = ClientRectangle.Width - lcontroltext.Left - margin*2;
+            //lcontroltext.Width = ClientRectangle.Width - lcontroltext.Left - margin*2;
             int ycontroltext = (int)Font.GetHeight()+4;    // space for title/control text. Control text replaces title on UCs where its called.
             UCCB.Location = new Point(margin, margin+ycontroltext);
             UCCB.Size = new Size(ClientRectangle.Width - margin * 2, ClientRectangle.Height - margin * 2 - ycontroltext);
